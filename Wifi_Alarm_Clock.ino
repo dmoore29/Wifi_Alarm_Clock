@@ -38,14 +38,14 @@ void check_alarm();
 void update_alarm();
 
 //DEFINE ALL GLOBAL VAARIABLES HERE
-unsigned long timeout_start_val; //TODO: SMaller data type?
+unsigned long timeout_start_val; //TODO: Smaller data type?
 char scratch_data_from_ESP[50];//first byte is the length of bytes
 char payload[180];
 byte payload_size=0, counter=0;
 char ip_address[16];
 char current_time[50];
-int current_hour = 0; //TODO: SMaller data type?
-int current_minute = 0; //TODO: SMaller data type?
+int current_hour = 0; //TODO: Smaller data type?
+int current_minute = 0; //TODO: Smaller data type?
 int button = 0;
 
 boolean alarm_on = 0;
@@ -70,7 +70,7 @@ const char keyword_linkdisc[] = "Unlink";
 const char keyword_html_start_time[] = "ateTime";
 const char keyword_html_end_time[] = "utcO";
 
-void setup(){//        SETUP     START
+void setup(){
   //Pin Modes for ESP TX/RX
   pinMode(ESP8266_rxPin, INPUT);
   pinMode(ESP8266_txPin, OUTPUT);
@@ -93,9 +93,9 @@ void setup(){//        SETUP     START
   currentLoopTime = millis();
   setLoopTime = currentLoopTime; 
   Serial.println("Exiting Setup");
-}//                    SETUP     END
+}
 
-void loop(){//         LOOP     START
+void loop(){
   button = digitalRead(buttonPin);
 //  Serial.println(button);
   if(button != 0 && reading){
@@ -124,4 +124,4 @@ void loop(){//         LOOP     START
       setLoopTime = currentLoopTime;
     }
   }
-}//                    LOOP     END
+}
